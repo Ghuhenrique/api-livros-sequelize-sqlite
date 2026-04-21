@@ -1,3 +1,7 @@
+node_modules/
+database.sqlite
+.env
+
 # Logs
 logs
 *.log

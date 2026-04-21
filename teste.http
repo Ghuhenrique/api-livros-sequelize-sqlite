@@ -1,0 +1,115 @@
+### ===============================
+### 1. LISTAR LIVROS (BANCO VAZIO)
+### ===============================
+GET http://localhost:3000/livros
+
+###
+
+### ===============================
+### 2. CADASTRAR LIVRO VÁLIDO
+### ===============================
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+  "titulo": "Dom Casmurro",
+  "autor": "Machado de Assis",
+  "ano": 1899,
+  "paginas": 256
+}
+
+###
+
+### ===============================
+### 3. CADASTRAR SEM TITULO (ERRO)
+### ===============================
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+  "autor": "Autor Teste",
+  "ano": 2000,
+  "paginas": 100
+}
+
+###
+
+### ===============================
+### 4. ANO COMO STRING (ERRO)
+### ===============================
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+  "titulo": "Livro Teste",
+  "autor": "Autor Teste",
+  "ano": "abc",
+  "paginas": 100
+}
+
+###
+
+### ===============================
+### 5. PAGINAS NEGATIVO (ERRO)
+### ===============================
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+  "titulo": "Livro Teste",
+  "autor": "Autor Teste",
+  "ano": 2000,
+  "paginas": -10
+}
+
+###
+
+### ===============================
+### 6. LISTAR LIVROS (APÓS CADASTRO)
+### ===============================
+GET http://localhost:3000/livros
+
+###
+
+### ===============================
+### 7. BUSCAR POR ID EXISTENTE
+### ===============================
+GET http://localhost:3000/livros/1
+
+###
+
+### ===============================
+### 8. BUSCAR POR ID INEXISTENTE
+### ===============================
+GET http://localhost:3000/livros/999
+
+###
+
+### ===============================
+### 9. ATUALIZAR LIVRO
+### ===============================
+PUT http://localhost:3000/livros/1
+Content-Type: application/json
+
+{
+  "titulo": "Dom Casmurro Atualizado",
+  "autor": "Machado de Assis",
+  "ano": 1899,
+  "paginas": 300
+}
+
+###
+
+### ===============================
+### 10. DELETAR LIVRO
+### ===============================
+DELETE http://localhost:3000/livros/1
+
+###
+
+### ===============================
+### 11. CONFIRMAR DELEÇÃO
+### ===============================
+GET http://localhost:3000/livros/1
+
+###

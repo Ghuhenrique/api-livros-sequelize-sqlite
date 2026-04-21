@@ -1,0 +1,37 @@
+{
+  "name": "api-livros-sequelize-sqlite",
+  "version": "1.0.0",
+  "description": "API de livros com Node.js, Sequelize e SQLite com testes automatizados (Jest + Supertest).",
+  "main": "app.mjs",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app.mjs",
+    "start": "node app.mjs",
+    "test": "NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "sequelize",
+    "sqlite",
+    "api",
+    "livros",
+    "jest",
+    "supertest"
+  ],
+  "author": "Seu Nome",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4",
+    "nodemon": "^3.1.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
